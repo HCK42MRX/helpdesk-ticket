@@ -3,9 +3,10 @@ import React from "react";
 
 // utils 
 import { genKey } from "../../utils/genereteKey";
+import TitlePage from "@/components/ui/Dashboard/TitlePage";
 
 const statisticItemData = [
-  {   
+  {
     key: genKey(),
     title: 'Ticket Dibuat',
     jumlah: 0
@@ -25,8 +26,8 @@ const statisticItemData = [
 
 export default function Dashboard() {
   return (
-    <div className="flex gap-x-10">
-      {statisticItemData.map(data => <StatisticCard key={data.key} title={data.title}>{data.jumlah}</StatisticCard>)}
-    </div>
+      <div className="flex gap-x-10">
+        {statisticItemData.map(data => <StatisticCard key={data.key} title={data.title}>{data.jumlah}</StatisticCard>)}
+      </div>
   )
 }

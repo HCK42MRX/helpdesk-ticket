@@ -4,10 +4,15 @@ import axios from "axios";
 // components
 import BtnDropdown from "@/components/ui/Button/BtnDropdown";
 import BtnRedirect from "@/components/ui/Button/BtnRedirect";
+
+// utils
+import { genKey } from "@/utils/genereteKey";
+
 // icons
 import { AiOutlineUserAdd } from "react-icons/ai";
 import dynamic from "next/dynamic";
-import { genKey } from "@/utils/genereteKey";
+import { IoIosArrowDropdown } from "react-icons/io";
+import TitlePage from "@/components/ui/Dashboard/TitlePage";
 
 const DynamicUserDataCard = dynamic(() => import("@/components/ui/Card/UserDatacard"), { ssr: false })
 
@@ -37,10 +42,9 @@ export default async function Staff() {
   const today = new Date().toLocaleDateString()
   return (
     <>
-      <h1 className="sub-title">Staff Members</h1>
-      <p className="paragraph mt-2">Here you go can see who are you stuff</p>
+      <TitlePage title='Staff Members' description='Here you go can see who are you stuff'/>
       <div className="mt-8 flex items-center justify-between stnd-screen">
-        <BtnDropdown title='All department'>{dropDownContent.map(c => <p key={c.key} className="border-b-2 py-2 cursor-pointer">{c.content}</p>)}</BtnDropdown>
+        <BtnDropdown title='All department' icon={<IoIosArrowDropdown />} className='text-center'>{dropDownContent.map(c => <p key={c.key} className="border-b-2 py-2 cursor-pointer hover:text-red-600">{c.content}</p>)}</BtnDropdown>
         <BtnRedirect href='/add-user' icon={<AiOutlineUserAdd />} className='btn-green-w-icon stnd-button'>Tambah User</BtnRedirect>
       </div>
       <div className="mt-10">
