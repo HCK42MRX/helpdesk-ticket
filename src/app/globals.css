@@ -39,4 +39,7 @@
   .container-custom{
     @apply my-auto mx-0 max-w-[1200px]
   }
+  .stnd-transition{
+    @apply transition-all ease-in delay-75
+  }
 }
