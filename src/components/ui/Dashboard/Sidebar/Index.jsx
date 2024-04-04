@@ -9,7 +9,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { BsTicketPerforated } from "react-icons/bs";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
-import { FaRegUser } from "react-icons/fa6";
 
 // components
 import SidebarItem from "./SidebarItem/Index";
@@ -24,15 +23,9 @@ const dataMenuItems = [
   },
   {
     key: genKey(),
-    href: '/dashboard/ticket',
-    name: 'Ticket',
+    href: '/dashboard/tickets',
+    name: 'Tickets',
     icon: <BsTicketPerforated />
-  },
-  {
-    key: genKey(),
-    href: '/dashboard/user',
-    name: 'User',
-    icon: <FaRegUser />
   },
   {
     key: genKey(),

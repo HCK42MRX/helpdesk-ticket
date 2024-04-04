@@ -1,5 +1,15 @@
 import React from "react";
 
-export default function Home(){
-  return <h1>ketik /dashboard pada url</h1>
+import FormLogin from "@/components/ui/Forms/FormLogin";
+
+export default function Home() {
+  return (
+    <>
+      <main className="py-5 h-screen bg-slate-200 flex justify-center items-center">
+        <div className="container-custom">
+          <FormLogin/>
+        </div>
+      </main>
+    </>
+  )
 }

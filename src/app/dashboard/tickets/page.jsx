@@ -1,5 +1,5 @@
 import TitlePage from "@/components/ui/Dashboard/TitlePage";
-import React, { useCallback } from "react";
+import React, { Suspense, useCallback } from "react";
 
 // component
 import BtnModal from "@/components/ui/Button/BtnModal";
@@ -8,7 +8,6 @@ import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, Tabl
 import { IoFilterOutline } from "react-icons/io5";
 import InputOption from "@/components/ui/Input/InputOption";
 import BtnAction from "@/components/ui/Button/BtnAction";
-
 
 const tickets = [
   {
@@ -71,7 +70,7 @@ export default function Ticket() {
       </BtnModal>
 
       {/* Data Table Tickets */}
-      <Table className="mt-5 stnd-screen">
+      <Table className="mt-5">
         <TableHeader>
           <TableRow>
             <TableHead>Number</TableHead>
@@ -83,7 +82,7 @@ export default function Ticket() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {tickets.map(ticket => 
+          {tickets.map(ticket =>
             <TableRow key={ticket.number}>
               <TableCell>{ticket.number}</TableCell>
               <TableCell>{ticket.Title}</TableCell>

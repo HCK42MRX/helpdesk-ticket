@@ -23,7 +23,7 @@ export default function Modal({ children, heading }) {
     }
   }, [modalBox])
   return (
-    <div className="fixed flex justify-center inset-0 bg-black bg-opacity-25 backdrop-blur-sm" onClick={handleDontClose}>
+    <div className="fixed z-50 flex justify-center inset-0 bg-black bg-opacity-25 backdrop-blur-sm" onClick={handleDontClose}>
       <div className="box-modal mt-20 relative bg-white h-fit w-fit py-3 px-5 rounded-lg stnd-transition" ref={modalBox}>
         <span className="flex justify-end"><RxCross2 className="size-7 cursor-pointer hover:text-red-600 stnd-transition" onClick={handleVisible} /></span>
         <h1 className="heading">{heading}</h1>

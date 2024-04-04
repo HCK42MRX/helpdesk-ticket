@@ -4,7 +4,7 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
-export default function BtnDropdown({ children, title, classChildren, className, icon,...props }) {
+export default function BtnDropdown({ children, title, className, icon, classButton,...props }) {
   const [itemShow, setItemShow] = useState(false)
   let menuRef = useRef()
 
@@ -29,12 +29,12 @@ export default function BtnDropdown({ children, title, classChildren, className,
   return (
     <div className="block" ref={menuRef}>
       <div onClick={handleShow} className={cn("relative cursor-pointer", className)} {...props}>
-        <button className="stnd-button bg-slate-300">{title}{icon}</button>
+        <button className={cn("stnd-button", classButton)}>{title}{icon}</button>
       </div>
 
       {/* Dropdown content */}
       {itemShow ?
-        <div className="bg-white w-72 stnd-item-dropdown mt-1">
+        <div className="bg-white w-fit stnd-container-dropdown mt-1">
           {children}
         </div>
         : null}
