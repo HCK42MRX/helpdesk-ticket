@@ -1,53 +1,50 @@
-import TitlePage from "@/components/ui/Dashboard/TitlePage";
-import React, { Suspense, useCallback } from "react";
+import TitlePage from '@/components/ui/Dashboard/TitlePage'
+import React from 'react'
 
 // component
-import BtnModal from "@/components/ui/Button/BtnModal";
-import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import BtnModal from '@/components/ui/Button/BtnModal'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
-import { IoFilterOutline } from "react-icons/io5";
-import InputOption from "@/components/ui/Input/InputOption";
-import BtnAction from "@/components/ui/Button/BtnAction";
+import { IoFilterOutline } from 'react-icons/io5'
+import InputOption from '@/components/ui/Input/InputOption'
+import BtnAction from '@/components/ui/Button/BtnAction'
 
 const tickets = [
   {
-    "number": "INC001",
-    "Title": "Printer not working",
-    "Priority": "High",
-    "Department": "IT",
-    "Author": "John Doe",
-    "Date": "2024-03-31"
+    number: 'INC001',
+    Title: 'Printer not working',
+    Priority: 'High',
+    Department: 'IT',
+    Author: 'John Doe',
+    Date: '2024-03-31'
   },
   {
-    "number": "INC002",
-    "Title": "Software installation issue",
-    "Priority": "Medium",
-    "Department": "IT",
-    "Author": "Jane Smith",
-    "Date": "2024-03-30"
+    number: 'INC002',
+    Title: 'Software installation issue',
+    Priority: 'Medium',
+    Department: 'IT',
+    Author: 'Jane Smith',
+    Date: '2024-03-30'
   },
   {
-    "number": "INC003",
-    "Title": "Network connectivity problem",
-    "Priority": "High",
-    "Department": "IT",
-    "Author": "Mike Johnson",
-    "Date": "2024-03-29"
+    number: 'INC003',
+    Title: 'Network connectivity problem',
+    Priority: 'High',
+    Department: 'IT',
+    Author: 'Mike Johnson',
+    Date: '2024-03-29'
   },
   {
-    "number": "INC004",
-    "Title": "Email not syncing on mobile devices",
-    "Priority": "Low",
-    "Department": "IT",
-    "Author": "Emily Brown",
-    "Date": "2024-03-28"
+    number: 'INC004',
+    Title: 'Email not syncing on mobile devices',
+    Priority: 'Low',
+    Department: 'IT',
+    Author: 'Emily Brown',
+    Date: '2024-03-28'
   }
 ]
 
-
-
-
-export default function Ticket() {
+export default function Ticket () {
   return (
     <>
       <TitlePage title='Tickets' description='Here you go can see ticket from staff' />
@@ -96,4 +93,4 @@ export default function Ticket() {
       </Table>
     </>
   )
-} 
+}

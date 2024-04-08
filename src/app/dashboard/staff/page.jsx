@@ -45,7 +45,7 @@ export default async function Staff() {
       <TitlePage title='Staff Members' description='Here you go can see who are you stuff'/>
       <div className="mt-8 flex items-center justify-between">
         <BtnDropdown title='All department' icon={<IoIosArrowDropdown />} className='text-center bg-slate-300'>{dropDownContent.map(c => <p key={c.key} className="stnd-item-dropdown">{c.content}</p>)}</BtnDropdown>
-        <BtnRedirect href='/add-user' icon={<AiOutlineUserAdd />} className='btn-green-w-icon stnd-button'>Add User</BtnRedirect>
+        <BtnRedirect href='/dashboard/staff/add-user' icon={<AiOutlineUserAdd />} className='btn-green-w-icon stnd-button'>Add User</BtnRedirect>
       </div>
       <div className="mt-10">
         {getData ? getData.map(em => <DynamicUserDataCard key={em.id} src={em.image} alt={em.firstName} openTicket='0' closedTicket='0' role={em.company.title} href='/' lastLogin={today} />) : null}

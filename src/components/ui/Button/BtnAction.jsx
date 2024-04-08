@@ -1,14 +1,13 @@
-"use client"
+'use client'
 
-import React from "react";
+import React from 'react'
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
-
-export default function BtnAction({ btnName, icon, onClick, className }) {
+export default function BtnAction ({ btnName, type, icon, onClick, className, ...props }) {
   return (
     <>
-      {btnName ? <button className={cn("stnd-button", className)} onClick={onClick}>{btnName}</button> : <button className={cn("stnd-button", className)} onclick={onClick}>{icon}</button>}
+      <button type={type} className={cn('stnd-button', className)} onClick={onClick}>{btnName}{icon}</button>
     </>
   )
 }

@@ -1,24 +1,23 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Suspense } from "react";
+import React from 'react'
 
-const inter = Inter({ subsets: ["latin"] });;
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-import Loading from "./loading";
+import Providers from '@/components/ui/ProgressBar'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Ticket system app",
-  description: "support your department with ticket system app",
-};
+  title: 'Ticket system app',
+  description: 'support your department with ticket system app'
+}
 
-export default function RootLayout({ children }) {
+export default function RootLayout ({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense fallback={<Loading/>}>
-        {children}
-        </Suspense>
+      <Providers>{children}</Providers>
         </body>
     </html>
-  );
+  )
 }

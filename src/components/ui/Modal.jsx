@@ -1,14 +1,13 @@
-import React, { useCallback, useContext, useRef } from "react";
+import React, { useCallback, useContext, useRef } from 'react'
 
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from 'react-icons/rx'
 
-import { modalContext } from "@/contexts/modalContext";
+import { modalContext } from '@/contexts/modalContext'
 
 // import component
-import BtnAction from "./Button/BtnAction";
+import BtnAction from './Button/BtnAction'
 
-
-export default function Modal({ children, heading }) {
+export default function Modal ({ children, heading }) {
   const modalBox = useRef()
   const { visible, setVisible } = useContext(modalContext)
   const handleVisible = useCallback(() => {
