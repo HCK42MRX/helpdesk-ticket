@@ -26,7 +26,8 @@ export default function FormLogin () {
     resolver: zodResolver(schema)
   })
 
-  const handleLogin = async (data) => {
+  const handleLogin = async (data, e) => {
+    e.preventDefault()
     try {
       startTransition(async () => {
         const result = await login(data)
