@@ -2,6 +2,6 @@
 
 import { supabase } from '@/utils/supabaseConnect'
 
-export default async function addUser () {
-
+export default async function addUserAction (formData) {
+  const { username, role, departement, password } = formData
 }
