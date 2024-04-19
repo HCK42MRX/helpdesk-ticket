@@ -71,7 +71,7 @@ export default function FormAddUser ({ className }) {
             <InputOption name='departement' register={register} errors={errors}>
               {optionContent.map(op => <option key={op.key} value={op.content}>{op.content}</option>)}
             </InputOption>
-            <InputField label='Password' register={register} errors={errors} name='password' type='text' placeholder='Password, default=12345678' />
+            <InputField label='Password' register={register} errors={errors} name='password' type='text' placeholder='Password' />
             {isSubmitting ? <BtnAction btnName='...loading' type='button' disabled={isSubmitting} className='bg-slate-600 w-fit text-white mt-3' /> : <BtnAction btnName='submit' type='submit' disabled={isSubmitting} className='bg-blue-600 w-fit text-white mt-3' />}
           </div>
           <div className="upload-image flex items-center justify-center w-full border">

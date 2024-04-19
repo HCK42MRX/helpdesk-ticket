@@ -30,7 +30,8 @@ export default async function addUserAction (formData) {
       console.log(error)
       return
     }
-    console.log('berhasil upload data user')
+    console.log('berhasil tambah data')
+    revalidatePath('/dashboard/staff')
   } catch (error) {
     console.log(error)
   }
