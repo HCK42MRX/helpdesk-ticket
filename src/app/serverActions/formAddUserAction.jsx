@@ -3,6 +3,7 @@
 import bcrypt from 'bcrypt'
 import { supabase } from '@/utils/supabaseConnect'
 import uploadImageSupabase from '@/utils/uploadImagetoSupabase'
+import { revalidatePath } from 'next/cache'
 
 export default async function addUserAction (formData) {
   if (!formData) {
