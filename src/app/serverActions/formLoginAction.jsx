@@ -23,5 +23,3 @@ export default async function login (formData) {
     return err.message
   }
 }
-
-// [0: Object { id: 1, title: "Software developer", username: "admin", … }]

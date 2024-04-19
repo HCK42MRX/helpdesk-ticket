@@ -4,7 +4,7 @@ import React, { isValidElement, Children } from 'react'
 
 import { cn } from '@/lib/utils'
 
-export default function InputOption ({ register, label, name, className, errors, children }) {
+export default function InputOption ({ register, errors, label, name, className, children }) {
   const filteredChildren = Children.map(children, (child) => {
     if (isValidElement(child) && child.type === 'option') {
       return child

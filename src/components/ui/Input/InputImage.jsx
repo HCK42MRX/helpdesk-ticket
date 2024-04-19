@@ -1,33 +1,15 @@
 'use client'
 
-import React, { useCallback, useState } from 'react'
-import Image from 'next/image'
+import React from 'react'
 
-import { RxCross2 } from 'react-icons/rx'
+import { ACCEPTED_IMAGE_TYPES } from '@/utils/acceptedImages'
 
-export default function InputImage ({ name, id, register, onChange, ...rest }) {
-  const [selectedImage, setSelectedImage] = useState({ image: null, nameImage: 'preview image' })
-  const imageChange = useCallback((e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setSelectedImage(prevState => ({ ...prevState, image: e.target.files[0], nameImage: e.target.files[0].name }))
-    }
-  }, [selectedImage])
-  const removePreviewImage = useCallback(() => {
-    setSelectedImage(prevState => ({ ...prevState, image: null, nameImage: null }))
-  }, [selectedImage])
+export default function InputImage ({ register, errors, name, ...rest }) {
+  // https://mandeepsingh.hashnode.dev/nextjs-show-image-preview-before-uploading
   return (
-    <>
-      {!selectedImage.image
-        ? <>
-          <input type="file" name={name} id={id} accept='image/png, image/jpeg' onChange={imageChange} hidden />
-          <label htmlFor={id} className='bg-yellow-500 py-3 px-4 rounded-2xl w-fit text-white text-center cursor-pointer'>Upload Image</label>
-        </>
-        : <div className='flex flex-col'>
-          <span className='flex justify-end'><RxCross2 className="size-7 cursor-pointer hover:text-red-600 stnd-transition" onClick={removePreviewImage} /></span>
-          <Image src={URL.createObjectURL(selectedImage.image)} {...register(name)} alt='user image' className='my-3' width={400} height={400} />
-          <p className='paragraph text-center'>{selectedImage.nameImage}</p>
-        </div>
-      }
-    </>
+    <div className='flex flex-col gap-y-2 justify-center items-center'>
+      <input type='file' {...register(name)} accept={ACCEPTED_IMAGE_TYPES} name={name} id={name}/>
+      {errors[name] ? <p className='error-message'>{errors[name].message}</p> : null}
+    </div>
   )
 }
