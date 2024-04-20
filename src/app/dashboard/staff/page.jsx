@@ -13,7 +13,6 @@ import { IoIosArrowDropdown } from 'react-icons/io'
 import TitlePage from '@/components/ui/Dashboard/TitlePage'
 
 import UserDataTable from '@/components/ui/Card/UserDataTable'
-import { revalidatePath } from 'next/cache'
 
 const dropDownContent = [
   {

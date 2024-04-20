@@ -2,6 +2,8 @@
 
 import bcrypt from 'bcrypt'
 import { supabase } from '@/utils/supabaseConnect'
+import storeToken from './storeTokenAction'
+import { cookies } from 'next/headers'
 
 export default async function login (formData) {
   const { username, password } = formData
@@ -18,6 +20,7 @@ export default async function login (formData) {
     if (!isCorrectPassword) {
       return 'username atau password salah'
     }
+    storeToken(user.id)
     return true
   } catch (err) {
     return err.message

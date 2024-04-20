@@ -1,6 +1,7 @@
 import React from 'react'
 
 import FormLogin from '@/components/ui/Forms/FormLogin'
+import { cookies } from 'next/headers'
 
 export default function Home () {
   return (
